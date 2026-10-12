@@ -58,11 +58,13 @@ const layout = ({ title, description, path, depth, body }) => {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${SITE_URL}/${path}">
+<link rel="icon" href="${up}assets/favicon.png">
+<link rel="apple-touch-icon" href="${up}assets/apple-touch-icon.png">
 <link rel="stylesheet" href="${up}styles.css">
 </head>
 <body>
 <header class="site"><div class="wrap">
-  <a class="logo" href="${up}index.html">PerkaBoo</a>
+  <a class="logo" href="${up}index.html"><img class="logo-ghost" src="${up}assets/ghost-mini.svg" alt="" width="26" height="29">PerkaBoo</a>
   <nav><a href="${up}index.html">Home</a><a href="${up}cards/index.html">Card credits</a><a href="${up}support.html">Support</a><a href="${up}privacy.html">Privacy</a><a href="${up}terms.html">Terms</a></nav>
 </div></header>
 <main><article class="wrap">
