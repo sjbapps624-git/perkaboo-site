@@ -49,6 +49,8 @@ nav a:hover { color: var(--text); text-decoration: none; }
   background: var(--brand); color: var(--brand-ink); font-weight: 600;
 }
 .badge.soft { background: var(--brand-soft); color: var(--brand); }
+a.badge { text-decoration: none; }
+a.badge:hover, a.badge:focus-visible { filter: brightness(1.06); text-decoration: none; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; padding: 8px 0 48px; }
 .tile { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; box-shadow: var(--shadow); }
 .tile h3 { margin: 0 0 6px; font-size: 18px; }

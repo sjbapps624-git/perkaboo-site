@@ -12,12 +12,15 @@ const lib = JSON.parse(readFileSync(libraryPath, "utf8"));
 
 // Change this if the site moves to its own domain.
 const SITE_URL = "https://sjbapps624-git.github.io/perkaboo-site";
+const APP_STORE_URL = "https://apps.apple.com/app/id6818859318";
 
 // Only cards whose credits were verified with confidence A or B in the app repo's docs/library-verification.md.
 // Add a card here only after checking it. (Delta SkyMiles Reserve is confidence C: not published.)
 const PUBLISH = new Set([
   "amex-platinum", "amex-gold", "amex-business-platinum", "chase-sapphire-reserve", "chase-sapphire-preferred",
   "capital-one-venture-x", "hilton-honors-aspire", "marriott-bonvoy-brilliant", "citi-strata-premier",
+  // Added 2026-10-15, all confidence B in docs/library-verification.md.
+  "amex-business-gold", "delta-skymiles-platinum", "bofa-premium-rewards", "hilton-honors-surpass", "citi-strata-elite", "wells-fargo-autograph-journey",
 ]);
 
 // Caveats worth stating next to a credit, keyed by "cardId:slug".
@@ -80,7 +83,7 @@ ${body}
 };
 
 const disclaimer = `<p class="note">Details come from the issuer's public terms and reputable reviews, and issuers change credits often. Always confirm the current terms with your issuer before relying on a credit. PerkaBoo is not affiliated with any card issuer or bank.</p>`;
-const cta = `<div class="tile"><h3>Never miss one of these</h3><p>PerkaBoo lists every credit on your cards, reminds you before each one expires, and keeps your data on your phone. No bank login, no account, no card numbers. <span class="badge soft">Coming soon to the App Store</span></p></div>`;
+const cta = `<div class="tile"><h3>Never miss one of these</h3><p>PerkaBoo lists every credit on your cards, reminds you before each one expires, and keeps your data on your phone. No bank login, no account, no card numbers. <a class="badge soft" href="${APP_STORE_URL}">Download on the App Store</a></p></div>`;
 
 const cards = lib.cards.filter((c) => PUBLISH.has(c.id));
 const slug = (c) => c.id;
